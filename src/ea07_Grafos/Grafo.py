@@ -1,5 +1,6 @@
 from algs4.graph import Graph
 from algs4.depth_first_search import DepthFirstSearch
+from algs4.breadth_first_paths import BreadthFirstPaths
 
 
 if __name__=="__main__":
@@ -20,3 +21,9 @@ if __name__=="__main__":
     dfs = DepthFirstSearch(vuelos,1)
     print('Cantidad nodos recorridos:', dfs.count)
     print('Nodos visitados:', dfs.marked)
+
+
+    bfs = BreadthFirstPaths(vuelos, 1)
+    print('Tiene camino hasta 5:', bfs.has_path_to(5))
+    print('Camino hasta 5', [ x for x in bfs.path_to(5)])
+
