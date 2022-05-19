@@ -21,3 +21,10 @@ while len(monticulo)>0:
 print()
 
 
+datos2 = [ randint(0,N) for i in range(N) ]
+heapq.heapify(datos2)
+print('Monticulo de datos2:', datos2)
+
+datos3 = [ randint(0,N) for i in range(N) ]
+print('Top10', heapq.nlargest(10, datos3))
+print('10 menores', heapq.nsmallest(10, datos3))

@@ -19,7 +19,7 @@ class Fecha:
         # TODO Implementar la conversion a formato string
         pass
 
-    def __lt__(self, fecha) -> boolean:
+    def __lt__(self, fecha) -> bool:
         # TODO Implementar la comparacion 'menor que' entre fechas
         pass
 
