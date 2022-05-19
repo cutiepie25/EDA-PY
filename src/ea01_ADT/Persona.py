@@ -10,8 +10,8 @@ class Persona:
 
 if __name__ == "__main__":
     p1 = Persona(32, "Juan", Fecha(1990,4,20))
-    p2 = Persona(27, "Juan", Fecha(1995,9,11))
-    p3 = Persona(34, "Juan", Fecha(1988,7,2))
+    p2 = Persona(27, "Maria", Fecha(1995,9,11))
+    p3 = Persona(34, "Laura", Fecha(1988,7,2))
 
     print(p1)
     print(p2)    
