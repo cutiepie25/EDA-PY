@@ -19,6 +19,10 @@ class Fecha:
         # TODO Implementar la conversion a formato string
         pass
 
+    def __lt__(self, fecha) -> boolean:
+        # TODO Implementar la comparacion 'menor que' entre fechas
+        pass
+
     def leerFecha():
         # TODO Leer una fecha por consola y returnar una instancia de Fecha
         pass
