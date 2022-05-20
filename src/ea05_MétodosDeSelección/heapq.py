@@ -1,7 +1,4 @@
 # Cola de minima prioridad de la libreria estandar de Python: heapq
-# REF:
-# https://docs.python.org/3/library/heapq.html
-
 
 import heapq
 from random import randint
