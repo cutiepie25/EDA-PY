@@ -3,7 +3,7 @@ from algs4.stack import Stack
 
 # Nota:
 # En Linux terminar con ctrl-d
-# En windows terminar con ctrl-z
+# En windows terminar con ctrl-z y enter
 def calcular() -> float:
     pila = Stack()
     while(True):
