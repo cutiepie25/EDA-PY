@@ -1,8 +1,6 @@
 from dataclasses import dataclass
 from Fecha import Fecha
 
-# Ref: Data Classes
-# https://docs.python.org/3/library/dataclasses.html
 
 @dataclass(order=True)
 class Persona:
