@@ -6,4 +6,6 @@
 [Dataclasses](https://docs.python.org/3/library/dataclasses.html)  
 [Repaso de OOP](https://realpython.com/python3-object-oriented-programming/)  
 [Métodos estáticos](https://pythonbasics.org/static-method/)  
+[Type hints - 1](https://www.pythonstacks.com/blog/post/type-hints-python/)  
+[Type hints - 2](https://www.pythontutorial.net/python-basics/python-type-hints/)  
 
