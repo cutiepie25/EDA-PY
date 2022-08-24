@@ -14,7 +14,7 @@ class Point2D:
     """Class representing points in the plane
     """
 
-    def distance(self, other) -> float:
+    def distance(self, other:'Point2D') -> float:
         """Computes the distance to other Point2D
         """
         return math.sqrt( (self.getX()-other.getX())**2 + (self.getY()-other.getY())**2 )
@@ -47,7 +47,7 @@ class Point2D:
         """
         return None
     
-    def __eq__(self, other) -> bool:
+    def __eq__(self, other:'Point2D') -> bool:
         """Returns True if self==other (or very close to)
         """
         if self.distance(other)<1E-15:

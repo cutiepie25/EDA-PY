@@ -15,7 +15,7 @@ class Point2DCartesian(Point2D):
     """Class representing points in the plane
     """
 
-    def __init__(self, x, y):
+    def __init__(self, x:float, y:float):
         """Constructs a Point2D instance from the x,y coordinates
         """
         self._x = x
@@ -31,17 +31,17 @@ class Point2DCartesian(Point2D):
         """
         return math.sqrt( self._x**2 + self._y**2 )
     
-    def angle(self):
+    def angle(self) -> float:
         """Returns the angle to the x axis
         """
         return math.atan2( self._y, self._x )
     
-    def getX(self):
+    def getX(self) -> float:
         """Returns the x component
         """
         return self._x
 
-    def getY(self):
+    def getY(self) -> float:
         """Returns the y component
         """
         return self._y

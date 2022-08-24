@@ -16,19 +16,28 @@ class Fecha:
         pass
 
     def __str__(self) -> str:
-        # TODO Implementar la conversion a formato string
-        pass
+        return f"{self._año:4d}-{self._mes:02d}-{self._dia:02d}"
 
     def __lt__(self, fecha) -> bool:
         # TODO Implementar la comparacion 'menor que' entre fechas
         pass
 
-    def leerFecha():
+    def __eq__(self, fecha) -> bool:
+        # TODO Implementar la igualdad entre instancias de Fecha
+        pass
+
+    @staticmethod
+    def leerFecha() -> 'Fecha':
         # TODO Leer una fecha por consola y returnar una instancia de Fecha
         pass
 
 
 if __name__ == "__main__":
-    fecha = Fecha(2022,5,17)
+
+    cumple = Fecha.leerFecha()      # Invocar un método estático
+
+    fecha = Fecha(2022,5,9)         # Invocar el constructor
+    print(fecha)
+
     # TODO hacer pruebas unitarias de Fecha
     
