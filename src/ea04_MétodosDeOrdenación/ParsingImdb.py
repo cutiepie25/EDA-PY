@@ -57,40 +57,40 @@ def read_csv(filename):
             count += 1
             if count==1:
                 continue
-            # try:
-            fecha_publicacion = parseDate(rec[4])
-            pelicula = Pelicula(
-                rec[0],
-                rec[1],
-                rec[2],
-                int(rec[3]),
-                fecha_publicacion,
-                rec[5],
-                int(rec[6]),
-                rec[7],
-                rec[8],
-                rec[9],
-                rec[10],
-                rec[11],
-                rec[12],
-                rec[13],
-                float(rec[14]),
-                int(rec[15]),
-                rec[16],
-                rec[17],
-                rec[18],
-                rec[19],
-                rec[20],
-                rec[21]
-            )
-            pelis.append(pelicula)
-            # except:
-            #     print('ERROR')
+            try:
+                fecha_publicacion = parseDate(rec[4])
+                pelicula = Pelicula(
+                    rec[0],
+                    rec[1],
+                    rec[2],
+                    int(rec[3]),
+                    fecha_publicacion,
+                    rec[5],
+                    int(rec[6]),
+                    rec[7],
+                    rec[8],
+                    rec[9],
+                    rec[10],
+                    rec[11],
+                    rec[12],
+                    rec[13],
+                    float(rec[14]),
+                    int(rec[15]),
+                    rec[16],
+                    rec[17],
+                    rec[18],
+                    rec[19],
+                    rec[20],
+                    rec[21]
+                )
+                pelis.append(pelicula)
+            except:
+                print('ERROR')
     return pelis
 
 
 if __name__=="__main__":
-    peliculas = read_csv('/hdd/home/jmlon/tmp/Datasets/IMDb movies.csv')
+    peliculas = read_csv('IMDb movies.csv')
     for i in range(10):
         print(peliculas[i])
 
