@@ -4,7 +4,7 @@ Ejemplos y ejercicios para el curso de Estructuras de Datos y Algoritmos basados
 
 
 ## Instalación de la biblioteca del texto
-La biblioteca del texto se instala por medio del gestor de paquetes de python por medio del siguiente comando:
+La biblioteca [algs4](https://pypi.org/project/algs4/) del texto se instala por medio del gestor de paquetes de python por medio del siguiente comando:
 ```
 pip install algs4
 ```

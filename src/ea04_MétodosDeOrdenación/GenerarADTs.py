@@ -1,5 +1,5 @@
 from typing import List
-from random import randint
+from random import randint, uniform
 from Person import Person
 
 mujer = [ "Isabella", "Olivia", "Alexis", "Sofía", "Victoria", "Amelia", "Alexa", "Julia",
@@ -50,5 +50,5 @@ def generar(n: int) -> List[Person]:
             nombre2 = hombre[randint(0,len(hombre)-1)]
         apellido1 = apellidos[randint(0,len(apellidos)-1)]
         apellido2 = apellidos[randint(0,len(apellidos)-1)]
-        personas.append(Person(nombre1+" "+nombre2, apellido1+" "+apellido2, randint(0,80)))
+        personas.append(Person(nombre1+" "+nombre2, apellido1+" "+apellido2, randint(0,80), uniform(2,100)))
     return personas

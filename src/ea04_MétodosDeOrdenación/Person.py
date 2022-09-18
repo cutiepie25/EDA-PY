@@ -1,16 +1,14 @@
 
 class Person:
 
-    def __init__(self, nombres:str, apellidos:str, edad:int):
-        self.nombres = nombres
-        self.apellidos = apellidos
-        self.edad = edad
+    def __init__(self, nombres:str, apellidos:str, edad:int, peso:float):
+        self._nombres = nombres
+        self._apellidos = apellidos
+        self._edad = edad
+        self._peso = peso
 
     def __str__(self) -> str:
-        return f"{self.nombres} {self.apellidos} : {self.edad}"
+        return f"{self._nombres} {self._apellidos} : {self._edad}, {self._peso:.2f}"
 
-    def __lt__(self, otro: 'Person') -> bool:
-        if self.apellidos==otro.apellidos:
-            return self.nombres<otro.nombres
-        return self.apellidos<otro.apellidos
+    # TODO: Implementar método __lt__ para comparar personas por apellido y nombre
 
