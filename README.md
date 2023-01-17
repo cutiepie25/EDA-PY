@@ -16,7 +16,15 @@ Inicialmente instalar los siguientes paquetes:
 ```
 pip install numpy pygame
 ```
-Posteriormente descargar [introcs-1.0.zip](https://introcs.cs.princeton.edu/python/code/dist/introcs-1.0.zip) de la página del texto y descomprimir la carpeta `introcs-1.0`. Desde la consola entrar a esta carpeta y ejecutar el comando:
+Posteriormente descargar [introcs-1.0.zip](https://introcs.cs.princeton.edu/python/code/dist/introcs-1.0.zip) de la página del texto y descomprimir la carpeta `introcs-1.0`. 
+
+Para descargar un archivo desde la consola y descomprimirlo:
+```
+curl https://introcs.cs.princeton.edu/python/code/dist/introcs-1.0.zip --output introcs-1.0.zip
+unzip introcs-1.0.zip
+```
+
+Desde la consola entrar a esta carpeta y ejecutar el comando:
 ```
 python setup.py install --user
 ```
