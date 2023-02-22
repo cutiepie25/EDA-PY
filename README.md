@@ -18,6 +18,11 @@ pip install numpy pygame
 ```
 **Nota**: pygame [solo funciona hasta python 3.10](https://discuss.python.org/t/pygame-installation-fails/22198).
 
+En Linux es necesario tener instalado el modulo tkinter:
+```
+sudo apt-get install python3-tk
+```
+
 Posteriormente descargar [introcs-1.0.zip](https://introcs.cs.princeton.edu/python/code/dist/introcs-1.0.zip) de la página del texto y descomprimir la carpeta `introcs-1.0`. 
 
 Para descargar un archivo desde la consola y descomprimirlo:
