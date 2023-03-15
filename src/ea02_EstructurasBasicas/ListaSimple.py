@@ -9,7 +9,7 @@ class Nodo:
     _next : Referencia al siguiente nodo de la lista    
     """
 
-    def __init__(self, item, next):
+    def __init__(self, item, next: 'Nodo'):
         """Constructor de nodo, acepta un item y el nodo siguiente"""
         self._item = item
         self._next = next
