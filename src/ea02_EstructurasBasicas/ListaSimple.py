@@ -21,6 +21,7 @@ class ListaSimple:
     Atributos
     ---------
     _head : La cabeza de la lista.
+    _n : Numero de elementos
 
     Metodos
     -------
@@ -33,10 +34,20 @@ class ListaSimple:
     def __init__(self):
         """Constructor de la lista simple, inicializada como lista vacia"""
         self._head = None
+        self._n = 0
 
     def add(self, item):
         """Agregar un item en la lista simple"""
         self._head = Nodo(item, self._head)
+        self._n += 1
+
+    def isEmpty(self) -> bool:
+        """Retorna true si la lista esta vacia"""
+        return self._n == 0
+    
+    def size(self) -> int:
+        """Retorna el numero de elementos en la lista"""
+        return self._n
 
     def __iter__(self):
         """Obtener el iterador de la lista simple"""
@@ -52,6 +63,40 @@ class ListaSimple:
         else:
             raise StopIteration
 
+    def removeHead(self):
+        """Borra el primer nodo de la lista"""
+        # TODO : Implementar
+        pass
+
+    def removeLast(self):
+        """Borra el ultimo nodo de la lista"""
+        # TODO : Implementar
+        pass
+
+    def addLast(self, item):
+        """Agrega un item al final de la lista"""
+        # TODO : Implementar
+        pass
+
+    def get(self, i:int):
+        """Retorna el item en la posicion i de la lista"""
+        # TODO : Implementar
+        pass
+
+    def insert(self, i:int, item):
+        """Inserta un item en la posicion i de la lista"""
+        # TODO : Implementar
+        pass
+
+    def remove(self, i:int):
+        """Remueve el nodo de la posicion i de la lista"""
+        # TODO : Implementar
+        pass
+
+    def invert(self):
+        """Devuelve una nueva lista con los elementos originales en orden inverso"""
+        # TODO : Implementar
+        pass
 
 
 if __name__ == "__main__":
