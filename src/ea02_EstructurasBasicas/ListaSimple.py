@@ -98,6 +98,12 @@ class ListaSimple:
         # TODO : Implementar
         pass
 
+    def split(self):
+        """Divide la lista en dos mitades y retorna las dos lista"""
+        # TODO : Implementar
+        pass
+
+
 
 if __name__ == "__main__":
     l = ListaSimple()
