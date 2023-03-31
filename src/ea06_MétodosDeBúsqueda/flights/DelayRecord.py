@@ -30,3 +30,5 @@ class DelayRecord:
         self.security_delay = security_delay
         self.late_aircraft_delay = late_aircraft_delay
     
+    def __str__(self):
+        return f"{self.year}, {self.fl_date}, {self.op_unique_carrier}, {self.op_carrier_airline_id}, {self.op_carrier_fl_num}, {self.origin_airport_id}, {self.origin}, {self.origin_city_name}, {self.origin_state_abr}, {self.dest_airport_id}, {self.dest}, {self.dest_city_name}, {self.dest_state_abr}, {self.dep_delay_new}, {self.arr_delay}, {self.arr_delay_new}, {self.carrier_delay}, {self.weather_delay}, {self.nas_delay}, {self.security_delay}, {self.late_aircraft_delay}"
