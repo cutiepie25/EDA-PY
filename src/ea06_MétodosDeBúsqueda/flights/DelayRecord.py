@@ -1,6 +1,4 @@
 
-# class describing a DelayRecord with the following fields:
-# YEAR	FL_DATE	OP_UNIQUE_CARRIER	OP_CARRIER_AIRLINE_ID	OP_CARRIER_FL_NUM	ORIGIN_AIRPORT_ID	ORIGIN	ORIGIN_CITY_NAME	ORIGIN_STATE_ABR	DEST_AIRPORT_ID	DEST	DEST_CITY_NAME	DEST_STATE_ABR	DEP_DELAY_NEW	ARR_DELAY	ARR_DELAY_NEW	CARRIER_DELAY	WEATHER_DELAY	NAS_DELAY	SECURITY_DELAY	LATE_AIRCRAFT_DELAY
 
 import csv
 from datetime import datetime
@@ -52,7 +50,7 @@ def readCSV(filename: str) -> list:
 # Example main function:
 # Reads the dataset, prints the number of records and the first record
 if __name__=="__main__":
-    records = readCSV('/home/jmlon/tmp/Datasets/548634059_T_ONTIME_REPORTING.csv')
+    records = readCSV('548634059_T_ONTIME_REPORTING.csv')
     print(len(records))
     print(records[0])
 
