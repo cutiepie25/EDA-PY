@@ -13,8 +13,6 @@ class CustomerSupportTweet:
         self.tweet_id = tweet_id
         self.author_id = author_id
         self.inbound = inbound
-        # parse a date in the format "Wed Oct 11 06:55:44 +0000 2017" into a datetime object
-
         self.created_at = datetime.datetime.strptime(created_at, '%a %b %d %H:%M:%S %z %Y')
         self.text = text
         self.response_tweet_id = response_tweet_id
