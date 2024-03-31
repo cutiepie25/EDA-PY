@@ -46,6 +46,8 @@ class ListaDoble:
         self._head = Nodo(item, self._head, None)
         if old_head is not None:
             old_head._prev = self._head
+        if self._last is None:
+            self._last = self._head
         self._n += 1
 
     def isEmpty(self) -> bool:
