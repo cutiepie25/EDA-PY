@@ -11,6 +11,7 @@ class Fecha:
         # TODO Implementar el calculo del dia del año
         pass
 
+    @staticmethod
     def esBiciesto(año: int) -> bool:
         # TODO Implementar la funcion para determinar si un año es biciesto
         pass
@@ -28,6 +29,7 @@ class Fecha:
 
     @staticmethod
     def leerFecha() -> 'Fecha':
+        """[Factory Pattern](https://refactoring.guru/design-patterns/factory-method)"""
         # TODO Leer una fecha por consola y returnar una instancia de Fecha
         pass
 

@@ -9,8 +9,9 @@
 #-----------------------------------------------------------------------
 
 import math
+from abc import ABC, abstractmethod
 
-class Point2D:
+class Point2D(ABC):
     """Class representing points in the plane
     """
 
@@ -19,33 +20,37 @@ class Point2D:
         """
         return math.sqrt( (self.getX()-other.getX())**2 + (self.getY()-other.getY())**2 )
     
+    @abstractmethod
     def __abs__(self) -> float:
         """Returns the distance to the origin (magnitude)
         
         Not defined, must be implemented in subclasses
         """
-        return None
+        pass
     
+    @abstractmethod
     def angle(self) -> float:
         """Returns the angle to the x axis
         
         Not defined, must be implemented in subclasses
         """
-        return None
+        pass
     
+    @abstractmethod
     def getX(self) -> float:
         """Returns the x component
         
         Not defined, must be implemented in subclasses
         """
-        return None
+        pass
 
+    @abstractmethod
     def getY(self) -> float:
         """Returns the y component
         
         Not defined, must be implemented in subclasses
         """
-        return None
+        pass
     
     def __eq__(self, other:'Point2D') -> bool:
         """Returns True if self==other (or very close to)
