@@ -53,8 +53,9 @@ class Point2D(ABC):
         pass
     
     def __eq__(self, other:'Point2D') -> bool:
-        """Returns True if self==other (or very close to)
+        """Returns True if the value of self is equal (or very close) to the value of other
         """
-        if self.distance(other)<1E-15:
-            return True
+        if isinstance(other, Point2D):
+            if self.distance(other)<1E-12:
+                return True
         return False

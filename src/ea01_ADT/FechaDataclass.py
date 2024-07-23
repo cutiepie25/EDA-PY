@@ -18,4 +18,5 @@ if __name__=='__main__':
 # 2. Se pueden comparar fechas?
 # 3. Como determinar si una fecha cae en año es biciesto?
 # 4. Como calcular tiempo transcurrido entre 2 fechas?
+# 5. Se pueden hacer validaciones para garantizar la integridad de los datos Fecha?
 
