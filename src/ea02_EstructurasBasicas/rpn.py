@@ -11,6 +11,15 @@ def calcular() -> float:
             linea = input()
             if linea.isnumeric():           # TODO: isnumeric no acepta valores con decimales
                 pila.push(float(linea))
+            match linea:
+                case "+":
+                    pila.push(pila.pop()+pila.pop())
+                case "-":
+                    pila.push(pila.pop()-pila.pop())
+                case "*":
+                    pila.push(pila.pop()*pila.pop())
+                case "/":
+                    pila.push(pila.pop()/pila.pop())
 
         except EOFError:
             break
