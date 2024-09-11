@@ -1,32 +1,19 @@
-import random
+from naipe import Naipe
+from mano import Mano
 
-class Carta:
-    def __init__(self, valor: str, pinta: str):
-        self.valor = valor
-        self.pinta = pinta
-    
-    def get_valor(self) -> str:
-        return self.valor
-    
-    def get_pinta(self) -> str:
-        return self.pinta
-    
-    def to_string(self) -> str:
-        return f"{self.valor} de {self.pinta}"
+if __name__ == "__main__":
+    naipe = Naipe()
+    mano1 = Mano(naipe)
+    mano2 = Mano(naipe)
+
+    print("Mano 1:", mano1)
+    print("Mano 2:", mano2)
+
+    if mano1.comparar(mano2):
+        print("Mano 1 es mayor que Mano 2")
+    else:
+        print("Mano 2 es mayor que Mano 1")
+
+
     
 
-class Naipe:
-    def __init__(self):
-        valores = ["As", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-        pintas = ["♠", "♥", "♦", "♣"]
-        self.cartas=[Carta(valor,pinta) for valor in valores for pinta in pintas]
-        random.shuffle(self.cartas)
-        
-    def tomarCarta(self) -> 'Carta':
-        if len(self.cartas) == 0:
-            return None
-        return self.cartas.pop()
-    
-class Mano:
-    def __init__(self):
-        
