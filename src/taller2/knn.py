@@ -1,30 +1,45 @@
 def calcular_distancia(punto1, punto2):
-    """Calcula la distancia euclidiana entre dos puntos de dimensión d."""
     suma = 0.0
-    for i in range(len(punto1)):
-        suma += (punto1[i] - punto2[i]) ** 2
-    return suma ** 0.5  # Raíz cuadrada manual
+    for i in range(len(punto1)):# Sea N = longitud del vector punto1
+        suma += (punto1[i] - punto2[i]) ** 2 #Operación unitaria
+    return suma ** 0.5
+"""
+* Al inicio del bucle se inicializa la variable suma (operación unitaria) = 1
+* El bucle se ejecuta M veces = M
+* Por cada iteración (de las n iteraciones), se realizan 3 operaciones (resta, potencia y suma) 3
+* El total de operaciones dentro del bucle son 3M
+* Al final del bucle, se realiza una operación de raíz cuadrada, que es una operación unitaria = 1
 
-def clasificar(conocidos, clases, desconocido, k):
-    """
-    clasificar - Clasifica una muestra desconocida utilizando el algoritmo kNN.
+T(calcular_distancia) = 3M+2
+"""
 
-    conocidos: Matriz de N muestras (vectores de dimensión d).
-    clases: Lista de clases correspondientes a las muestras conocidas.
-    desconocido: Muestra de dimensión d a clasificar.
-    k: Número de vecinos más cercanos a considerar.
-    """
+
+def clasificar(conocidos: list, clases: list, desconocido:list, k:int):
     # Paso 1: Calcula la distancia entre la muestra desconocida y todas las conocidas
     distancias = []
-    for i in range(len(conocidos)):
+    for i in range(len(conocidos)): #N veces
         distancia = calcular_distancia(conocidos[i], desconocido)
         distancias.append((distancia, clases[i]))
+    """ 
+    • Al inicio del bucle se inicializa la variable distancias (operación unitaria) = 1
+    • El bucle se ejecuta N veces, donde N es la cantidad de muestras = N
+    • Cada iteración del bucle llama a calcular_distancia y cada iteración del bucle utiliza append que es una operación unitaria = 3M + 3
+    • Total de operaciones del bucle = N(3M + 3)
+
+    T(distancia) = N(3M + 3) + 1
+    """
 
     # Paso 2: Ordenar las distancias utilizando la función sort
     distancias.sort(key=lambda x: x[0])
+    """ T(ordenar) = n log n """
+
 
     # Paso 3: Seleccionar las clases de los k vecinos más cercanos
     vecinos_clases = [distancias[i][1] for i in range(k)]
+    """
+    Cantidad de K vecinos más cercanos que seleccionamos después de calcular y ordenar las distancias.
+
+    T(selección) = K """
 
     # Paso 4: Devolver la clase más común entre los k vecinos
     conteo = {}
@@ -36,7 +51,21 @@ def clasificar(conocidos, clases, desconocido, k):
 
     clase_mas_comun = max(conteo, key=conteo.get)
     return clase_mas_comun
+    """
+    * Contamos cuántas veces aparece cada clase en los k vecinos más cercanos = k
+    * Para cada uno de los k vecinos, comprobamos si su clase ya está en el diccionario conteo. Si está, incrementamos su contador; si no, agregamos una nueva entrada al diccionario. = k
+    * Cada inserción o actualización en el diccionario toma una operación unitaria, y esto se repite k veces. = k
+    
+    T(conteo) = 3k"""
 
+"""
+T(Total) = T(distancia) + T(ordenar)+ T(selección) + T(conteo)
+T(Total) = N(3M + 3) + 1 + n log n + K + 3k
+T(Total) = 3NM+3N+NlogN+1+4K
+Notación tilde = 3NM + NLogN
+Notación Big O = O(NM+NlogN)
+
+"""
 def prueba_unitaria_diferente():
     # Muestras conocidas (vectores de dimensión 2) con sus respectivas clases
     conocidos = [
@@ -61,15 +90,17 @@ def prueba_unitaria_diferente():
     
     # Clasificar la primera muestra desconocida
     resultado1 = clasificar(conocidos, clases, muestra_desconocida1, k)
-    print(f'La clase de la muestra desconocida1 es: {resultado1}')  # Debería ser 1
+    assert resultado1 == 1, f'Error: se esperaba clase 1 para muestra desconocida1, obtenido: {resultado1}'
     
     # Clasificar la segunda muestra desconocida
     resultado2 = clasificar(conocidos, clases, muestra_desconocida2, k)
-    print(f'La clase de la muestra desconocida2 es: {resultado2}')  # Debería ser 2
+    assert resultado2 == 2, f'Error: se esperaba clase 2 para muestra desconocida2, obtenido: {resultado2}'
     
     # Clasificar la tercera muestra desconocida
     resultado3 = clasificar(conocidos, clases, muestra_desconocida3, k)
-    print(f'La clase de la muestra desconocida3 es: {resultado3}')  # Debería ser 0
+    assert resultado3 == 0, f'Error: se esperaba clase 0 para muestra desconocida3, obtenido: {resultado3}'
+    
+    print("Todas las pruebas unitarias pasaron correctamente.")
 
 # Main para ejecutar la prueba
 if __name__ == "__main__":
