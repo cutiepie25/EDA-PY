@@ -59,6 +59,8 @@ def clasificar(conocidos: list, clases: list, desconocido:list, k:int):
     T(conteo) = 3k"""
 
 """
+3) Estimar el tiempo requerido por el algoritmo clasificar
+
 T(Total) = T(distancia) + T(ordenar)+ T(selección) + T(conteo)
 T(Total) = N(3M + 3) + 1 + n log n + K + 3k
 T(Total) = 3NM+3N+NlogN+1+4K
