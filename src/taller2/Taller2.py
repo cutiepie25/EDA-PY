@@ -1,3 +1,8 @@
+# Mariana Gonzalez
+# Mario Gutierrez
+# Maria Alejandra Vargas
+
+
 import numpy as np
 import time
 import numpy as np
