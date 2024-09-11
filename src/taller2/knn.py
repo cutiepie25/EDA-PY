@@ -36,3 +36,41 @@ def clasificar(conocidos, clases, desconocido, k):
 
     clase_mas_comun = max(conteo, key=conteo.get)
     return clase_mas_comun
+
+def prueba_unitaria_diferente():
+    # Muestras conocidas (vectores de dimensión 2) con sus respectivas clases
+    conocidos = [
+        [1.0, 1.0],   # Clase 0
+        [1.5, 2.0],   # Clase 0
+        [2.0, 1.0],   # Clase 1
+        [3.0, 3.5],   # Clase 1
+        [5.0, 5.0],   # Clase 2
+        [6.0, 6.5],   # Clase 2
+        [7.0, 8.0],   # Clase 2
+        [0.5, 1.0]    # Clase 0
+    ]
+    
+    clases = [0, 0, 1, 1, 2, 2, 2, 0]
+    
+    # Nuevas muestras desconocidas
+    muestra_desconocida1 = [2.5, 2.0]  # Se espera que pertenezca a la clase 1
+    muestra_desconocida2 = [6.0, 5.5]  # Se espera que pertenezca a la clase 2
+    muestra_desconocida3 = [1.0, 1.5]  # Se espera que pertenezca a la clase 0
+    
+    k = 3  # Se considerarán los 3 vecinos más cercanos
+    
+    # Clasificar la primera muestra desconocida
+    resultado1 = clasificar(conocidos, clases, muestra_desconocida1, k)
+    print(f'La clase de la muestra desconocida1 es: {resultado1}')  # Debería ser 1
+    
+    # Clasificar la segunda muestra desconocida
+    resultado2 = clasificar(conocidos, clases, muestra_desconocida2, k)
+    print(f'La clase de la muestra desconocida2 es: {resultado2}')  # Debería ser 2
+    
+    # Clasificar la tercera muestra desconocida
+    resultado3 = clasificar(conocidos, clases, muestra_desconocida3, k)
+    print(f'La clase de la muestra desconocida3 es: {resultado3}')  # Debería ser 0
+
+# Main para ejecutar la prueba
+if __name__ == "__main__":
+    prueba_unitaria_diferente()
